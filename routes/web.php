@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\KelolaKeuanganController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +20,11 @@ Route::get('/', function () {
 });
 
 //Route::get('/post', [PostController::class, 'index']);
-Route::view('/try', 'tryblade.child');
+Route::view('/view_kelola_barang', 'kelola_barang');
+Route::get('/kelola_barang', [UserController::class, 'index'])->name('kelola_barang');
+Route::get('/kelola_barang.show', [UserController::class, 'index'])->name('kelola_barang/show');
+Route::resource('/kelola_keuangan', KelolaKeuanganController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
