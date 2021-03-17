@@ -1,7 +1,6 @@
 <?php
 
-use App\Http\Controllers\KelolaKeuanganController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,12 +18,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/post', [PostController::class, 'index']);
-Route::view('/view_kelola_barang', 'kelola_barang');
-Route::get('/kelola_barang', [UserController::class, 'index'])->name('kelola_barang');
-Route::get('/kelola_barang.show', [UserController::class, 'index'])->name('kelola_barang/show');
-Route::resource('/kelola_keuangan', KelolaKeuanganController::class);
+// Route::resources('/post', [PostController::class, 'index']);
+
+// Route::get('/user/{name?}', function ($name = null){
+//     return "hai ".$name;
+// });
+
+// Route::view('/hello', 'hello', ['name' => 'Layung']);
+
+// Route::view('/hello', 'hello'); //persingkat
+
+// Route::get('/hello', function () {
+//     return view('hello');
+// });
+
+// Route::view('/hello','/hello');
+// Route::redirect('/','/hello');
+
+Route::view('/try', 'tryblade.child');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/buku', [App\Http\Controllers\HomeController::class, 'buku'])->name('buku');

@@ -1,3 +1,5 @@
-.body{
-    background-color:black;
+body{
+    background: linear-gradient(to right, #000 , rgb(39, 53, 39), #000);
+    color: white;
 }
+

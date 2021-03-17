@@ -248,6 +248,12 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'text' => 'Buku',
+            'url' => 'buku',
+            'icon' => 'fas fa-book',
+            'can' => 'isAdmin'
+        ],
+        [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
